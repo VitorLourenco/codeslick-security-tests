@@ -13,7 +13,7 @@ app = Flask(__name__)
 def get_user():
     user_id = request.args.get('id')
     query = f"SELECT * FROM users WHERE id = {user_id}"
-    cursor.execute(query)
+    cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
     return jsonify(cursor.fetchall())
 
 # Vulnerability 2: SQL injection in search
