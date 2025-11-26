@@ -73,20 +73,3 @@ API_KEY = 'sk-1234567890abcdef'
 
 # Vulnerability 9: Hardcoded secret key
 app.secret_key = 'my-super-secret-flask-key'
-
-# ============================================================================
-# DESERIALIZATION (2 vulnerabilities)
-# ============================================================================
-
-# Vulnerability 10: Unsafe pickle deserialization
-@app.route('/load-data', methods=['POST'])
-def load_data():
-    data = request.data
-    obj = pickle.loads(data)
-    return jsonify(obj)
-
-# Vulnerability 11: Unsafe YAML load
-def load_config(config_file):
-    with open(config_file) as f:
-        config = yaml.load(f)
-    return config
