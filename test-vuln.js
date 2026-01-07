@@ -3,7 +3,7 @@
 
   // SQL Injection
   app.get('/user', (req, res) => {
-    const query = `SELECT * FROM users WHERE id = ${req.query.id}`;
+    const query = `SELECT * FROM users WHERE id = ?`; const params = [req.query.id];
   });
 
   // Hardcoded Secret (will be detected by Secrets Detection!)
