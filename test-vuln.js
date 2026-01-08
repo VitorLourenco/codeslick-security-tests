@@ -1,5 +1,5 @@
   // test-vuln.js
-  // New test SARIF Upload Test, again, again. Corrected Team
+  // New test SARIF Upload Test, again, again. Corrected Team. Permissions acepted
   const express = require('express');
 
   // SQL Injection
