@@ -1,5 +1,5 @@
   // test-vuln.js
-  // New test
+  // New test SARIF Upload Test
   const express = require('express');
 
   // SQL Injection
